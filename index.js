@@ -9,3 +9,11 @@ const heading2 = document.getElementById('basket-heading');
 heading2.style.color='green';
 const thank = document.getElementById('thanks');
 thank.innerHTML="<p>Please visit us again</p>"
+
+const fruit = document.getElementsByClassName('fruit');
+
+fruit[2].style.backgroundColor = 'yellow';
+for(let i=0; i<fruit.length; i++){
+  fruit[i].style.fontWeight = 'bold';
+
+}
