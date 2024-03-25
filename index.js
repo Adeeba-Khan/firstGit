@@ -17,3 +17,9 @@ for(let i=0; i<fruit.length; i++){
   fruit[i].style.fontWeight = 'bold';
 
 }
+
+const lists = document.getElementsByTagName('li');
+lists[4].style.color='blue';
+for(let i = 0; i<lists.length; i++){
+  lists[i].style.fontStyle='italic';
+}
