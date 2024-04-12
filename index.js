@@ -65,3 +65,34 @@ for (let i = 0; i < EvenFruitItems.length; i++) {
     EvenFruitItems[i].style.backgroundColor = 'brown'; // Corrected to set background color to "brown"
     EvenFruitItems[i].style.color = 'white';
 }
+
+const fruito = document.querySelectorAll('.fruit');
+
+
+for (let i = 0; i < fruito.length; i++) {
+  const edit = document.createElement('button');
+const text = document.createTextNode('Edit');
+edit.classList.add ('edit-btn');
+edit.appendChild(text);
+    fruito[i].appendChild(edit);
+}
+
+
+const form = document.querySelector('form');
+const fruits = document.querySelector('.fruits');
+
+form.addEventListener('submit', function(event) {
+    event.preventDefault();
+    const fruitToAdd = document.getElementById('fruit-to-add');
+
+    const newLi = document.createElement('li');
+    newLi.innerHTML = fruitToAdd.value + '<button class="delete-btn">x</button>'; 
+
+    fruits.appendChild(newLi);
+}); 
+fruits.addEventListener('click', function(event) {
+    if (event.target.classList.contains('delete-btn')) {
+        const fruitToDelete = event.target.parentElement;
+        fruits.removeChild(fruitToDelete);
+    }
+}); // Added closing brace
